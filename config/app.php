@@ -2,6 +2,8 @@
 
 return [
 
+    'domain' => env('APP_ENV') === 'production' ? env('APP_DOMAIN') : 'local.test',
+
     /*
     |--------------------------------------------------------------------------
     | Application Name

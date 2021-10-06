@@ -13,38 +13,38 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::domain('admin.' . config('app.domain', 'local.test'))->group(function () {
+Route::domain(config('app.domain'))->group(function () {
+    Route::get('/', function () {
+        return view('root');
+    })->name('root');
+});
+
+Route::domain('admin.' . config('app.domain'))->group(function () {
     Route::get('/', function () {
         return view('admin.home');
     })->name('admin.home');
 });
 
-Route::domain('broker.' . config('app.domain', 'local.test'))->group(function () {
+Route::domain('broker.' . config('app.domain'))->group(function () {
     Route::get('/', function () {
         return view('broker.home');
     })->name('broker.home');
 });
 
-Route::domain('salesperson.' . config('app.domain', 'local.test'))->group(function () {
+Route::domain('salesperson.' . config('app.domain'))->group(function () {
     Route::get('/', function () {
         return view('salesperson.home');
     })->name('salesperson.home');
 });
 
-Route::domain('consultant.' . config('app.domain', 'local.test'))->group(function () {
+Route::domain('consultant.' . config('app.domain'))->group(function () {
     Route::get('/', function () {
         return view('consultant.home');
     })->name('consultant.home');
 });
 
-Route::domain('appraiser.' . config('app.domain', 'local.test'))->group(function () {
+Route::domain('appraiser.' . config('app.domain'))->group(function () {
     Route::get('/', function () {
         return view('appraiser.home');
     })->name('appraiser.home');
-});
-
-Route::domain(config('app.domain', 'local.test'))->group(function () {
-    Route::get('/', function () {
-        return view('root');
-    })->name('root');
 });
