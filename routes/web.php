@@ -48,3 +48,9 @@ Route::domain('appraiser.' . config('app.domain'))->group(function () {
         return view('appraiser.home');
     })->name('appraiser.home');
 });
+
+Route::domain('www' . config('app.domain'))->group(function () {
+    Route::get('*', function () {
+        return redirect(config('app.url'));
+    });
+});
