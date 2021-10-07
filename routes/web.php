@@ -49,7 +49,7 @@ Route::domain('appraiser.' . config('app.domain'))->group(function () {
     })->name('appraiser.home');
 });
 
-Route::domain('www' . config('app.domain'))->group(function () {
+Route::domain('www.' . config('app.domain'))->group(function () {
     Route::get('*', function () {
         return redirect(config('app.url'));
     });
