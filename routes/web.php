@@ -54,3 +54,9 @@ Route::domain('www.' . config('app.domain'))->group(function () {
         return redirect(config('app.url'));
     });
 });
+
+Route::domain('sub1.sub2' . config('app.domain'))->group(function () {
+    Route::get('/', function () {
+        return '<h1>PASSED!</h1>';
+    });
+});
